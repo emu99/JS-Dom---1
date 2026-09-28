@@ -5,8 +5,8 @@ class SmartWorker {
 }
 
 class Robot extends SmartWorker {
-  // রোবট কাজ করতে পারে, কিন্তু খেতে পারে না!
-  eat() { return null; } // বাধ্য হয়ে খালি মেথড রাখতে হচ্ছে
+  // Robots can work, but they cannot eat!
+  eat() { return null; } // Being forced to keep empty methods
 }
 //Good way
 const swimmer = {
@@ -17,7 +17,7 @@ const flyer = {
   fly() { console.log("Flying..."); }
 };
 
-// যার যা প্রয়োজন তাকে শুধু সেই মেথড দেওয়া (Composition)
+// Giving each entity only the methods they need (Composition).
 class Duck {
   constructor() {
     Object.assign(this, swimmer, flyer);
@@ -26,6 +26,6 @@ class Duck {
 
 class Penguin {
   constructor() {
-    Object.assign(this, swimmer); // পেনগুইন উড়তে পারে না, তাই শুধু swim দেওয়া হলো
+    Object.assign(this, swimmer); // Penguins cannot fly, so only the swim behavior was provided
   }
 }

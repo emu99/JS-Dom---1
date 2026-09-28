@@ -3,11 +3,11 @@ class Report {
   constructor(data) {
     this.data = data;
   }
-  // ১ নম্বর দায়িত্ব: রিপোর্ট তৈরি করা
+  //  Preparing reports
   generateHTML() {
     return `<h1>${this.data.title}</h1>`;
   }
-  // ২ নম্বর দায়িত্ব: ফাইল সেভ করা (এটি SRP লঙ্ঘন করে)
+  //  Saving files (this violates the Single Responsibility Principle / SRP).
   saveToFile(fileName) {
     console.log(`Saving report to ${fileName}...`);
   }
@@ -22,7 +22,7 @@ class Report {
   }
 }
 
-// ফাইল সেভ করার জন্য আলাদা ক্লাস
+// A separate class for saving files
 class ReportSaver {
   save(reportHTML, fileName) {
     console.log(`Saving report to ${fileName}...`);

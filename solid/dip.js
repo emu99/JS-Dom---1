@@ -5,7 +5,7 @@ class MySQLDatabase {
 
 class OrderManager {
   constructor() {
-    // সরাসরি MySQLDatabase এর ওপর নির্ভরশীল। ডাটাবেজ বদলাতে হলে পুরো ক্লাস এডিট করতে হবে।
+    // Directly dependent on MySQLDatabase. If the database changes, the entire class will have to be edited.
     this.db = new MySQLDatabase(); 
   }
 }
@@ -19,7 +19,7 @@ class MongoDB {
 }
 
 class OrderManager {
-  // বাইরে থেকে যেকোনো ডাটাবেজ অবজেক্ট পাস করা যাবে
+  // Any database object can be passed from the outside
   constructor(database) {
     this.database = database;
   }
@@ -29,6 +29,6 @@ class OrderManager {
   }
 }
 
-// ব্যবহার:
+// Usage:
 const mySQL = new MySQLDatabase();
-const order1 = new OrderManager(mySQL); // এখন সহজে MongoDB-তেও সুইচ করা যাবে
+const order1 = new OrderManager(mySQL); // Now it will be easy to switch to MongoDB as well

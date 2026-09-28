@@ -5,7 +5,7 @@ class PaymentProcessor {
       console.log(`Paid ${amount} via bKash`);
     } else if (type === 'nagad') {
       console.log(`Paid ${amount} via Nagad`);
-    } // নতুন রকেট বা কার্ড যোগ করতে হলে এই কোড এডিট করতে হবে
+    } // To add a new Rocket or card, this code needs to be edited (or You must modify this code to add a new Rocket or card).
   }
 }
 // Good way
@@ -21,7 +21,7 @@ class NagadPayment {
   }
 }
 
-// মূল ক্লাসটি আর এডিট করতে হবে না, নতুন কোনো পেমেন্ট ক্লাস পাস করলেই হবে
+// The main class will no longer need to be edited; simply passing a new payment class will be enough
 class PaymentProcessor {
   processPayment(amount, paymentMethod) {
     paymentMethod.pay(amount);
